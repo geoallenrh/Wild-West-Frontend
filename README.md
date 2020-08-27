@@ -1,5 +1,4 @@
 # Wild West (frontend)
-[![Dependency Check](http://img.shields.io/david/openshift-evangelists/Wild-West-Frontend.svg)](https://david-dm.org/openshift-evangelists/Wild-West-Frontend)
 
 OpenShift, the Wild Wild West Way is a game created with two components:
 
@@ -28,10 +27,6 @@ All of this is happening in real on the server (if configured).  If you shoot a 
 
 *Others* A pull request away :)
 
-**Current Vanilla Kubernetes Objects Supported**
-
-*coming soon*
-
 ### Development
 
 Setup:
@@ -46,20 +41,9 @@ Run (with inline BACKEND_SERVICE configuration):
 BACKEND_SERVICE=my-backend-host-url.com npm start
 ```
 
-Configuration of Backend Service host url via Env Var:
-
 ```bash
 export BACKEND_SERVICE="my-backend-host-url.com"
 ```
 
-On your OpenShift cluster, for the backend to have access to the API, you need to give permission to the service account:
+[Openshift Deployment Details](deployment.md)
 
-```
-$ oc policy add-role-to-user view system:serviceaccount:wildwest:default where wildwest
-```
-
-If you want to enable destructive mode, where the player can actually delete things:
-
-```
-$ oc policy add-role-to-user edit system:serviceaccount:wildwest:default
-```
